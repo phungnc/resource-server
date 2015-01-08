@@ -18,3 +18,18 @@ exports.employee = function(req, res, next, id) {
     next();
   });
 };
+
+exports.all = function(req, res) {
+  console.log('Controller/employees...');
+
+  Employee.find().sort('-created').exec(function(err, employees){
+    if(err) {
+      return res.status(500).json({
+        error: "Cannot list the employees"
+      });
+    }
+    res.header("Access-Control-Allow-Origin", "*");
+    res.json(employees);
+
+  });
+};

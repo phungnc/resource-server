@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
     _        = require('lodash');
 
 /**
- * User schema
+ * Employee schema
  */
 
 var EmployeeSchema = new Schema({
@@ -25,4 +25,4 @@ var EmployeeSchema = new Schema({
   projects:[]
 });
 
-mongoose.model('Employee', employeeSchema);
+mongoose.model('Employee', EmployeeSchema);
